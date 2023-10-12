@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- fonts.google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS file -->
+    <link rel="stylesheet" href="PhotoSwipe-4.1.3/dist/photoswipe.css">
+
+    <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+             In the folder of skin CSS file there are also:
+             - .png and .svg icons sprite, 
+             - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="PhotoSwipe-4.1.3/dist/default-skin/default-skin.css">
+
+
+
+
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div class="close-field"></div>
+    <div class="burger">
+        <div class="burger_line burger_line_first"></div>
+        <div class="burger_line burger_line_second"></div>
+        <div class="burger_line burger_line_third"></div>
+        <div class="burger_line burger_line_fourth"></div>
+    </div>
+
+    <ul class='burger_menu'>
+
+        <li><a href='#' class='link'>Home</a></li>
+        <li><a href='#about_us' class='link about_js'>About Us</a></li>
+        <li><a href='#services' class='link services_js'>Services</a></li>
+        <li><a href='#our_teams' class='link teams_js'>Our Teams</a></li>
+        <li><a href='#contact_us' class='link contact_js'>Contact Us</a></li>
+    </ul>
+    <!-- <div class="fixed_and_hide"></div> -->
+    <header class="wrapper">
+        <div class="header_row _containeer">
+            <div class="header_left">
+                <svg width="126" height="54" viewBox="0 0 126 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.3773 15.585C12.7401 15.585 14.8049 16.0533 16.5717 16.99C18.3385 17.9266 19.7009 19.2464 20.6588 20.9493C21.638 22.631 22.1276 24.5787 22.1276 26.7925C22.1276 28.9851 21.638 30.9328 20.6588 32.6357C19.7009 34.3387 18.3279 35.6585 16.5398 36.5951C14.773 37.5317 12.7188 38 10.3773 38H1.97967V15.585H10.3773ZM10.0261 33.2743C12.0909 33.2743 13.698 32.7102 14.8475 31.582C15.997 30.4538 16.5717 28.8573 16.5717 26.7925C16.5717 24.7277 15.997 23.1206 14.8475 21.9711C13.698 20.8216 12.0909 20.2468 10.0261 20.2468H7.43972V33.2743H10.0261ZM24.0933 29.0596C24.0933 27.2289 24.4339 25.6217 25.1151 24.2381C25.8175 22.8545 26.7648 21.7901 27.9568 21.0451C29.1489 20.3001 30.4793 19.9275 31.9481 19.9275C33.204 19.9275 34.3003 20.183 35.2369 20.6939C36.1948 21.2047 36.9292 21.8753 37.4401 22.7055V20.183H42.9001V38H37.4401V35.4775C36.9079 36.3077 36.1629 36.9782 35.205 37.4891C34.2684 38 33.1721 38.2554 31.9162 38.2554C30.4687 38.2554 29.1489 37.8829 27.9568 37.1379C26.7648 36.3716 25.8175 35.2966 25.1151 33.9129C24.4339 32.508 24.0933 30.8902 24.0933 29.0596ZM37.4401 29.0915C37.4401 27.7291 37.0569 26.6542 36.2906 25.8665C35.5456 25.0789 34.6302 24.6851 33.5446 24.6851C32.459 24.6851 31.533 25.0789 30.7667 25.8665C30.0217 26.6329 29.6491 27.6972 29.6491 29.0596C29.6491 30.4219 30.0217 31.5075 30.7667 32.3164C31.533 33.104 32.459 33.4978 33.5446 33.4978C34.6302 33.4978 35.5456 33.104 36.2906 32.3164C37.0569 31.5288 37.4401 30.4538 37.4401 29.0915ZM57.7065 19.9914C59.7926 19.9914 61.453 20.6726 62.6876 22.0349C63.9435 23.376 64.5715 25.2279 64.5715 27.5908V38H59.1434V28.3252C59.1434 27.1331 58.8347 26.2071 58.2174 25.5472C57.6001 24.8874 56.7699 24.5574 55.7268 24.5574C54.6838 24.5574 53.8536 24.8874 53.2363 25.5472C52.619 26.2071 52.3103 27.1331 52.3103 28.3252V38H46.8503V20.183H52.3103V22.5458C52.8638 21.7582 53.6088 21.1409 54.5454 20.6939C55.482 20.2256 56.5357 19.9914 57.7065 19.9914ZM67.2801 29.0596C67.2801 27.2289 67.6206 25.6217 68.3018 24.2381C69.0043 22.8545 69.9515 21.7901 71.1436 21.0451C72.3357 20.3001 73.6661 19.9275 75.1349 19.9275C76.3908 19.9275 77.4871 20.183 78.4237 20.6939C79.3816 21.2047 80.116 21.8753 80.6269 22.7055V20.183H86.0869V38H80.6269V35.4775C80.0947 36.3077 79.3496 36.9782 78.3917 37.4891C77.4551 38 76.3589 38.2554 75.1029 38.2554C73.6554 38.2554 72.3357 37.8829 71.1436 37.1379C69.9515 36.3716 69.0043 35.2966 68.3018 33.9129C67.6206 32.508 67.2801 30.8902 67.2801 29.0596ZM80.6269 29.0915C80.6269 27.7291 80.2437 26.6542 79.4774 25.8665C78.7323 25.0789 77.817 24.6851 76.7314 24.6851C75.6458 24.6851 74.7198 25.0789 73.9535 25.8665C73.2084 26.6329 72.8359 27.6972 72.8359 29.0596C72.8359 30.4219 73.2084 31.5075 73.9535 32.3164C74.7198 33.104 75.6458 33.4978 76.7314 33.4978C77.817 33.4978 78.7323 33.104 79.4774 32.3164C80.2437 31.5288 80.6269 30.4538 80.6269 29.0915ZM100.893 19.9914C102.979 19.9914 104.64 20.6726 105.874 22.0349C107.13 23.376 107.758 25.2279 107.758 27.5908V38H102.33V28.3252C102.33 27.1331 102.021 26.2071 101.404 25.5472C100.787 24.8874 99.9567 24.5574 98.9136 24.5574C97.8705 24.5574 97.0404 24.8874 96.423 25.5472C95.8057 26.2071 95.4971 27.1331 95.4971 28.3252V38H90.037V20.183H95.4971V22.5458C96.0505 21.7582 96.7956 21.1409 97.7322 20.6939C98.6688 20.2256 99.7225 19.9914 100.893 19.9914ZM116.661 33.4978H124.388V38H110.563V33.6575L117.97 24.6851H110.626V20.183H124.229V24.5255L116.661 33.4978Z"
+                        fill="black" />
+                    <path d="M55.6152 29V41.5H98.9999V29" stroke="black" stroke-width="2" stroke-linecap="round" />
+                    <div class="line-rigth">
+                        <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.35352 1.5L4.71957 6" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="line_left">
+                        <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.21484 1.5L1.84879 6" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+
+                    </div>
+                </svg>
+
+            </div>
+            <div class="header_right">
+                <nav class="navigation_section">
+                    <ul class="main_menu root_nav">
+                        <li title="Home"><span>Home</span>
+                            <ul>
+                                <li><a href="#">Home 1</a></li>
+                                <li><a href="#">Home 2</a></li>
+                                <li><a href="#">Home 3</a></li>
+                                <li><a href="#">Home 4</a></li>
+                            </ul>
+                        </li>
+                        <li title="About Us"><span>About Us</span>
+                            <ul>
+                                <li><span>About Us1</span>
+                                    <ul class="sub_menu_2">
+                                        <li><a href="#">About Us11</a></li>
+                                        <li><a href="#">About Us22</a></li>
+                                        <li><a href="#">About Us33</a></li>
+                                        <li><a href="#">About Us44</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">About Us 2</a></li>
+                                <li><a href="#">About Us 3</a></li>
+                                <li><a href="#">About Us 4</a></li>
+                            </ul>
+                        </li>
+                        <li title="Services">Services</li>
+                        <li title="Our Teams"><a href="#our_teams" title="Our Teams">Our Teams</a></li>
+                        <!-- <li>Contact Us</li> -->
+                        <a href="#contact_us"><button class="btn_blue btn_blue_menu" title="Contact Us">Contact
+                                Us</button></a>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="_containeer">
+        <h1 id="about_us">About</h1>
+        <p class="center">It is a long established fact that a reader will be distracted by the readable content of
+            a page when
+            looking
+            at its
+            layout.</p>
+        <img src="image/about_block.png" alt="">
+        <div class="line">
+            <h4 class="achievement">Achievement</h4>
+            <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+            </svg>
+        </div>
+        <h2 class="max_width_738px">Interior customization with Danaanz, best quality with professional workers</h2>
+
+        <div class="img_and_skill">
+            <img src="image/table.png" alt="">
+            <div class="inside">
+                <div class="content_skill">
+                    <span>350+</span>
+                    <p>Project Completed</p>
+                    <span>23+</span>
+                    <p>Professional Teams</p>
+                    <span>15+</span>
+                    <p>Years Experience</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="line">
+            <h4 class="achievement">Service</h4>
+            <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+            </svg>
+        </div>
+        <h2 class="max_width_62px" id="services">Why Choose Us</h2>
+        <p class="p_grey_left tac">Customize your interior design into a dream place with the best designers and
+            quality furniture. We try
+            our best to
+            fulfill your expectations.</p>
+
+        <div class="three_column wrap_column">
+
+            <div class="box box_width">
+                <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="31.5" cy="31.5" r="31.5" fill="#D9D9D9" />
+                </svg>
+                <h3>High Quality</h3>
+                <p class="p_grey_center">Customize your interior design into a dream place with the best
+                    designers and quality furniture. We try our best to
+                    fulfill your expectations.</p>
+            </div>
+
+
+            <div class="box box_width">
+                <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="31.5" cy="31.5" r="31.5" fill="#D9D9D9" />
+                </svg>
+                <h3>Professional Designer</h3>
+                <p class="p_grey_center">Customize your interior design into a dream place with the best
+                    designers and quality furniture. We try our best to
+                    fulfill your expectations.</p>
+            </div>
+
+
+            <div class="box box_width">
+                <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="31.5" cy="31.5" r="31.5" fill="#D9D9D9" />
+                </svg>
+                <h3>The Best Services</h3>
+                <p class="p_grey_center">Customize your interior design into a dream place with the best
+                    designers and quality furniture. We try our best to
+                    fulfill your expectations.</p>
+            </div>
+
+        </div>
+
+        <div class="oll-achievement">
+            <div class="line">
+                <h4 class="achievement">Achievement</h4>
+                <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+            <div>
+                <div class="main_block btn">
+                    <img src="image/pic_1.png" alt="">
+                    <div class="left_section">
+                        <h3>Interior design</h3>
+                        <p>Customize your interior design into a dream place with the best designers and quality
+                            furniture.
+                            We try our best to
+                            fulfill your expectations.</p>
+                    </div>
+                </div>
+
+                <div class="main_block btn">
+                    <img src="image/pic_2.png" alt="">
+                    <div class="left_section">
+                        <h3>Consultant</h3>
+                        <p>Customize your interior design into a dream place with the best designers and quality
+                            furniture.
+                            We try our best to
+                            fulfill your expectations.</p>
+                    </div>
+                </div>
+
+                <div class="main_block btn">
+                    <img src="image/pic_3.png" alt="" class="last">
+                    <div class="left_section">
+                        <h3>construction consultant</h3>
+                        <p>Customize your interior design into a dream place with the best designers and quality
+                            furniture.
+                            We try our best to
+                            fulfill your expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="line">
+                <h4 class="achievement">Product</h4>
+                <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="choose_flex">
+                <h2>Choose your product themes.</h2>
+                <p class="p_grey_left margin_0 tac">Find the theme you want. If our choice of theme is not what you
+                    want, you
+                    can
+                    customize it as you
+                    want.</p>
+            </div>
+
+            <div class="main_name accordion">
+                <div class="accordion_element qq">
+                    <h3><span>01</span>
+                        <div class="description">
+                            <h3>Vintage</h3>
+                            <!-- <div class="panel">
+                                    <p class="">the use of simple and limited elements to get the best effect or
+                                        impression.</p>
+                                </div> -->
+                        </div>
+                    </h3>
+                    <svg class="arrow" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.66699 16H25.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="acc_padding">the use of simple and limited elements to get the best effect or
+                    impression.</p>
+            </div>
+
+
+
+            <div class="main_name accordion">
+                <div class="accordion_element qq">
+                    <h3><span>02</span>
+                        <div class="description">
+                            <h3>Minimalist</h3>
+
+                    </h3>
+                    <svg class="arrow" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.66699 16H25.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="acc_padding">the use of simple and limited elements to get the best effect or
+                    impression.</p>
+            </div>
+
+            <div class="main_name accordion">
+                <div class="accordion_element qq">
+                    <h3><span>03</span>
+                        <div class="description">
+                            <h3>Modern</h3>
+
+                        </div>
+                    </h3>
+                    <svg class="arrow" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.66699 16H25.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="acc_padding">the use of simple and limited elements to get the best effect or
+                    impression.</p>
+            </div>
+
+            <div class="main_name accordion">
+                <div class="accordion_element qq">
+                    <h3><span>04</span>
+                        <div class="description">
+                            <h3>Transitional</h3>
+                        </div>
+                    </h3>
+                    <svg class="arrow" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.66699 16H25.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 6.66666L25.3333 16L16 25.3333" stroke="black" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="acc_padding">the use of simple and limited elements to get the best effect or
+                    impression.</p>
+            </div>
+
+            <div class="line">
+                <h4 class="achievement">Designer</h4>
+                <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+
+            <div class="Creative Person" id="our_teams">
+                <h2 class="max_width_290px" id="Our_Teams">Creative Person</h2>
+                <p class="p_grey_left tac">Customize your interior design into a dream place with the best designers
+                    and
+                    quality furniture. We try our best to
+                    fulfill your expectations.</p>
+            </div>
+
+            <div class="designers">
+
+                <a href="#popup" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_1.png" class="person_1" alt="person_1">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#popup2" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_2.png" class="person_2" alt="person_2">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup3" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_3.png" class="person_3" alt="person_3">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup4" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_4.png" class="person_4" alt="person_4">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup5" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_5.png" class="person_5" alt="person_5">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup6" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_6.png" class="person_6" alt="person_6">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup7" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_7.png" class="person_7" alt="person_7">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#popup8" class="popup_link">
+                    <div class="element_ceo_worker">
+                        <img src="image/person_8.png" class="person_8" alt="person_8">
+                        <div class="legend">
+                            <h3>Shoo Phar Dhie</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- contact us-------------- -->
+            <h1 id="contact_us">Contact Us</h1>
+            <p class="center wd_518px">It is a long established fact that a reader will be distracted by the
+                readable content
+                of
+                a page when
+                looking
+                at its
+                layout.</p>
+            <form action="/action_page.php" class="appointment_form" method="post">
+                <div class="first_and_last_name">
+                    <div class="first_name">
+                        <p class="">First Name</p>
+                        <input type="text" name="first_username" placeholder="First Name" value="" required />
+                    </div>
+                    <div class="last_name">
+                        <p class="">Last Name</p>
+                        <input type="text" name="last_name_username" placeholder="Last Name" value="" required />
+                    </div>
+                </div>
+
+                <div class="email">
+                    <p class="">Email</p>
+                    <input type="email" name="email" placeholder="Email" value="" required />
+                </div>
+
+                <div class="phone_number">
+                    <p class="">Phone Number</p>
+                    <input type="tel" class="inp inp-js" name="phone" placeholder="" value="" required />
+                    <select name="code" id="sel">
+                        <option value="one" class="US">US</option>
+                        <option value="two" class="RU">RU</option>
+                        <option value="three" class="UA">UA</option>
+                    </select>
+                </div>
+
+                <div class="email">
+                    <p class="">Email</p>
+                    <textarea name="" id="" rows="6" placeholder="Your Message"></textarea>
+                </div>
+                <div class="text_center"><input class="btn_form" type="submit" value="Send Massage"></div>
+            </form>
+
+            <div class="line">
+                <h4 class="achievement">Loaction</h4>
+                <svg class="line_hide" width="464" height="2" viewBox="0 0 464 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="-8.74228e-08" y1="1" x2="464" y2="0.999959" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+
+            <div class="three_column">
+                <div class="visit_our_stores">
+                    <h2>Visit Our Stores</h2>
+                    <p class="p_grey_left tac">Find us at these locations.</p>
+                    <h3 class="tac">Email</h3>
+                    <p class="p_grey_left margin-top_10px tac">dananz@gmail.com</p>
+                    <h3 class="tac">Phone</h3>
+                    <p class="p_grey_left margin-top_10px tac">+62 815 002 1000.</p>
+                </div>
+                <div>
+                    <div class="three_column wrap_column">
+                        <div class="box_width">
+                            <h3>Jakarta</h3>
+                            <p class="p_grey_left margin-top_10px">Customize your interior design into a dream place
+                                with
+                                the
+                                best
+                                designers and quality furniture. We try our best to
+                                fulfill your expectations.</p>
+                        </div>
+                        <div class="box_width">
+                            <h3>Surakarta</h3>
+                            <p class="p_grey_left margin-top_10px">Customize your interior design into a dream place
+                                with
+                                the
+                                best
+                                designers and quality furniture. We try our best to fulfill your expectations.</p>
+                        </div>
+                        <div class="box_width">
+                            <h3>Yogyakarta</h3>
+                            <p class="p_grey_left margin-top_10px">Customize your interior design into a dream place
+                                with
+                                the
+                                best
+                                designers and quality furniture. We try our best to fulfill your expectations.</p>
+                        </div>
+                        <div class="box_width">
+                            <h3>Bandung</h3>
+                            <p class="p_grey_left margin-top_10px">Customize your interior design into a dream place
+                                with
+                                the
+                                best
+                                designers and quality furniture. We try our best to fulfill your expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two_sofas">
+                <div class="first_section">
+                    <div class="img_and_legend_ceo_1">
+                        <img src="image/sofa_1.png" alt="sofa">
+                        <div class="person_card person_card_one">
+                            <img src="/image/Ellipse.png" alt="Ellipse" class="ellipse">
+                            <div>
+                                <h3 class="font_size_18px">Arga Danaan</h3>
+                                <p class="font_size_18px">CEO of Dananz</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modern_room_and_button">
+                        <div class="section_right">
+                            <h3>Modern Room</h3>
+                            <p class="p_sofa_right">Online learning with us does not interfere with your daily
+                                life.
+                                because learning can be done anytime and anywhere..</p>
+                            <a href="#"><button class="btn_blue">See More</button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="second_section">
+
+                    <div class="img_and_legend_ceo_2">
+                        <img src="image/sofa_2.png" alt="sofa" class="sofa_2">
+                        <div class="person_card person_card_two">
+                            <img src="/image/Ellipse.png" alt="Ellipse" class="ellipse">
+                            <div>
+                                <h3 class="font_size_18px">Arga Danaan</h3>
+                                <p class="font_size_18px">CEO of Dananz</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transitional_room_and_button">
+                        <div class="section_left">
+                            <h3>Transitional Room</h3>
+                            <p class="p_sofa_right">Online learning with us does not interfere with your daily
+                                life.
+                                because learning can be done anytime and anywhere..</p>
+                            <a href="#"><button class="btn_blue">See More</button></a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="two_column_text">
+                <div class="two_column">
+                    <h3>Project Overview</h3>
+                    <p>Online learning with us does not interfere with your daily life. because learning can be done
+                        anytime and anywhere.
+                        Online learning with us does not interfere with your daily life. because learning can be
+                        done anytime and anywhere.
+                        Online learning with us does not interfere with your daily life. because learning can be
+                        done anytime and anywhere.</p>
+                    <div class="bottum_row">
+                        <p class="date">July 22 - 2022</p>
+                        <p>Interior Design - Furnitur</p>
+                    </div>
+                </div>
+                <div class="two_column">
+                    <h3>Design Process</h3>
+                    <p class="design_process">Online learning with us does not interfere with your daily life.
+                        because learning
+                        can be done
+                        anytime and anywhere.
+                        Online learning with us does not interfere with your daily life. because learning can be
+                        done anytime and anywhere.</p>
+                    <p>Online learning with us does not interfere with your daily life. because learning can be done
+                        anytime and anywhere.
+                        Online learning with us does not interfere with your daily life. because learning can be
+                        done anytime and anywhere.</p>
+                </div>
+            </div>
+
+            <div class="interier">
+                <div class="block_interier">
+                    <img src="/image/interier_1.png" class="img_1" alt="">
+                    <img src="/image/interier_2.png" alt="">
+                </div>
+                <img src="/image/interier_3.png" class="midlle" alt="">
+                <div class="block_interier">
+                    <img src="/image/interier_4.png" class="img_4" alt="">
+                    <img src="/image/interier_5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div class="discuss_bgc">
+        <div class="discuss_flex _containeer">
+            <h2 class="discuss_left">let's discuss making your interior like a dream place!</h2>
+            <div class="discuss_right">
+                <p>Contact us below to work together to build your amazing interior</p>
+                <a href="#"><button class="btn_white" title="Contact Us">Contact Us</button></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ----------------------------------pop_up---------------------------- -->
+
+    <div id="popup" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №1</div>
+                <div class="popup_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas expedita
+                    debitis asperiores porro ab sequi numquam molestias provident, velit officiis dolorem inventore
+                    fugiat necessitatibus vero, aliquid eius. Deleniti, deserunt!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas expedita
+                    debitis asperiores porro ab sequi numquam molestias provident, velit officiis dolorem inventore
+                    fugiat necessitatibus vero, aliquid eius. Deleniti, deserunt!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas expedita
+                    debitis asperiores porro ab sequi numquam molestias provident, velit officiis dolorem inventore
+                    fugiat necessitatibus vero, aliquid eius. Deleniti, deserunt!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №2</div>
+                <div class="popup_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas expedita
+                    debitis asperiores porro ab sequi numquam molestias provident, velit officiis dolorem inventore
+                    fugiat necessitatibus vero, aliquid eius. Deleniti, deserunt!
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup3" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №3</div>
+                <div class="popup_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas expedita
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup4" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №4</div>
+                <div class="popup_text">
+                    444444444444444 4444444444 444444444444 44444444444444444444444
+                    444444444444444444444 44444444444444 44444444444444444 44444444444444444
+                    4444444444444444444444444444444444 44444444444444444 44444444444444444
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup5" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №5</div>
+                <div class="popup_text">
+                    55555555555555 544444444 55555555555555 55555555555555 55555555555555 55555555555555 55555555555555
+                    555555555555555555555555555555555555555555 55555555555555 55555555555555
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup6" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №6</div>
+                <div class="popup_text"> 6666666666666666666
+                    55555555555555 544444444 55555555555555 55555555555555 55555555555555 55555555555555 55555555555555
+                    555555555555555555555555555555555555555555 55555555555555 55555555555555
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup7" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №7</div>
+                <div class="popup_text">
+                    77777777777777777777777777 55555555555555 544444444 55555555555555 55555555555555 55555555555555
+                    55555555555555 55555555555555
+                    555555555555555555555555555555555555555555 55555555555555 55555555555555
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup8" class="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close close_popup">X</a><!-- href="#fixed_and_hide" -->
+                <div class="popup_title">Це модальне вікно №8</div>
+                <div class="popup_text">
+                    8888888888888888888888888888888 55555555555555 544444444 55555555555555 55555555555555
+                    55555555555555 55555555555555 55555555555555
+                    555555555555555555555555555555555555555555 55555555555555 55555555555555
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -------------------PhotoSwipe--------------------------- -->
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="script.js"></script>
+
+<!-- Core JS file -->
+<script src="PhotoSwipe-4.1.3/dist/photoswipe.min.js"></script>
+<!-- UI JS file -->
+<script src="PhotoSwipe-4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+
+</html>
